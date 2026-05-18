@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Editable Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
 
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      background: #111;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 id="titleText">My Website</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Change Title</h2>
+    <input type="text" id="titleInput" placeholder="Enter new title">
+    <button onclick="changeTitle()">Update</button>
+  </div>
+
+  <div class="card">
+    <h2>Change Paragraph</h2>
+    <textarea id="paraInput" placeholder="Write something..."></textarea>
+    <button onclick="changePara()">Update</button>
+    <p id="paraText">This is default text. You can change it.</p>
+  </div>
+
+  <div class="card">
+    <h2>Upload Image</h2>
+    <input type="file" onchange="loadImage(event)">
+    <img id="imgPreview" src="https://via.placeholder.com/800x400">
+  </div>
+
+</div>
+
+<script>
+  function changeTitle() {
+    let val = document.getElementById("titleInput").value;
+    document.getElementById("titleText").innerText = val;
+  }
+
+  function changePara() {
+    let val = document.getElementById("paraInput").value;
+    document.getElementById("paraText").innerText = val;
+  }
+
+  function loadImage(event) {
+    let img = document.getElementById("imgPreview");
+    img.src = URL.createObjectURL(event.target.files[0]);
+  }
+</script>
+
+</body>
+</html>
