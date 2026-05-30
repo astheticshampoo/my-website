@@ -1,112 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Editable Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 60);
+      }
     }
 
-    header {
-      background: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    typingEffect();
+
+    function resetTyping(newText) {
+      text = newText;
+      i = 0;
+      document.getElementById("typing").innerHTML = "";
+      typingEffect();
     }
 
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+    function changeTheme() {
+      const value = document.getElementById("themeSelector").value;
+      const title = document.getElementById("mainTitle");
+      const popup = document.querySelector(".popup p");
+
+      if(value === "love") {
+        title.innerHTML = "For My Special Person ❤️";
+        resetTyping("You are the reason behind my smile, my happiness, and my heartbeats ❤️");
+        popup.innerHTML = "You are the most beautiful part of my life ✨<br><br>Every moment with you feels magical.";
+      }
+
+      if(value === "bestie") {
+        title.innerHTML = "To My Best Friend 🌸";
+        resetTyping("A best friend like you makes every moment special 🌟");
+        popup.innerHTML = "Thank you for always being there for me 💖<br><br>You are truly irreplaceable.";
+      }
+
+      if(value === "birthday") {
+        title.innerHTML = "Happy Birthday 🎂";
+        resetTyping("May your day be filled with happiness, laughter, and unforgettable memories 🎉");
+        popup.innerHTML = "Wishing you success, joy, and endless smiles on your special day 🎁";
+      }
+
+      if(value === "mother") {
+        title.innerHTML = "Happy Mother's Day 💐";
+        resetTyping("Thank you Mom for your endless love and sacrifices ❤️");
+        popup.innerHTML = "You are the heart of our family and the strongest woman ever 🌸";
+      }
+
+      if(value === "father") {
+        title.innerHTML = "Happy Father's Day 👑";
+        resetTyping("Dad, your support and guidance mean everything to me 💙");
+        popup.innerHTML = "Thank you for being my hero, protector, and inspiration 👑";
+      }
     }
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    // Popup
+    function showPopup() {
+      document.getElementById("popup").classList.add("active");
     }
 
-    img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
+    function closePopup() {
+      document.getElementById("popup").classList.remove("active");
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+    // Floating Hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
     }
 
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      border: none;
-      background: #111;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #333;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1 id="titleText">My Website</h1>
-</header>
-
-<div class="container">
-
-  <div class="card">
-    <h2>Change Title</h2>
-    <input type="text" id="titleInput" placeholder="Enter new title">
-    <button onclick="changeTitle()">Update</button>
-  </div>
-
-  <div class="card">
-    <h2>Change Paragraph</h2>
-    <textarea id="paraInput" placeholder="Write something..."></textarea>
-    <button onclick="changePara()">Update</button>
-    <p id="paraText">This is default text. You can change it.</p>
-  </div>
-
-  <div class="card">
-    <h2>Upload Image</h2>
-    <input type="file" onchange="loadImage(event)">
-    <img id="imgPreview" src="https://via.placeholder.com/800x400">
-  </div>
-
-</div>
-
-<script>
-  function changeTitle() {
-    let val = document.getElementById("titleInput").value;
-    document.getElementById("titleText").innerText = val;
-  }
-
-  function changePara() {
-    let val = document.getElementById("paraInput").value;
-    document.getElementById("paraText").innerText = val;
-  }
-
-  function loadImage(event) {
-    let img = document.getElementById("imgPreview");
-    img.src = URL.createObjectURL(event.target.files[0]);
-  }
-</script>
+    setInterval(createHeart, 300);
+  </script>
 
 </body>
 </html>
