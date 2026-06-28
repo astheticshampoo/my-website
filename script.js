@@ -243,3 +243,77 @@ heart.remove();
 },500);
 
 console.log("Special Website Loaded Successfully ❤️");
+const photos = [
+"https://images.unsplash.com/photo-1516589178581-6cd7833ae3b",
+"https://images.unsplash.com/photo-1522673607200-164d1b6ce486",
+"https://images.unsplash.com/photo-1518199266791-5375a83190b",
+"https://images.unsplash.com/photo-1517841905240-472988babdf9",
+"https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
+"https://images.unsplash.com/photo-1511988617509-a57c8a288659"
+];
+
+const photoBoxes=document.querySelectorAll(".photo");
+
+photoBoxes.forEach((box,index)=>{
+
+const img=document.createElement("img");
+
+img.src=photos[index%photos.length]+"?auto=format&fit=crop&w=800&q=80";
+
+img.loading="lazy";
+
+box.appendChild(img);
+
+});
+
+const letter=document.querySelector(".letter p");
+
+if(letter){
+
+const message=`Today is all about celebrating YOU ❤️
+
+May your smile always stay bright.
+
+May every dream become reality.
+
+Thank you for being such an amazing person.
+
+Happy Birthday 🎂
+
+Stay Happy...
+Stay Blessed...
+Stay Forever Awesome ❤️`;
+
+letter.innerHTML="";
+
+let i=0;
+
+function typingLetter(){
+
+if(i<message.length){
+
+letter.innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(typingLetter,35);
+
+}
+
+}
+
+setTimeout(typingLetter,1200);
+
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+document.body.classList.add("fadeIn");
+
+});
+
+window.addEventListener("load",()=>{
+
+console.log("Gallery Loaded Successfully ❤️");
+
+});
