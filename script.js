@@ -339,3 +339,27 @@ document.getElementById("setupScreen").style.display = "none";
 };
 
 }
+const setupScreen = document.getElementById("setupScreen");
+const createBtn = document.getElementById("createBtn");
+
+if (createBtn) {
+  createBtn.addEventListener("click", function () {
+
+    const name = document.getElementById("userName").value.trim();
+    const message = document.getElementById("userMessage").value.trim();
+
+    if (name !== "") {
+      document.getElementById("personName").textContent = name;
+    }
+
+    if (message !== "") {
+      document.querySelector(".letter p").textContent = message;
+    }
+
+    setupScreen.style.display = "none";
+
+    showPage(0);
+    playMusic();
+
+  });
+}
