@@ -244,12 +244,12 @@ heart.remove();
 
 console.log("Special Website Loaded Successfully ❤️");
 const photos = [
-"https://images.unsplash.com/photo-1516589178581-6cd7833ae3b",
-"https://images.unsplash.com/photo-1522673607200-164d1b6ce486",
-"https://images.unsplash.com/photo-1518199266791-5375a83190b",
-"https://images.unsplash.com/photo-1517841905240-472988babdf9",
-"https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
-"https://images.unsplash.com/photo-1511988617509-a57c8a288659"
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg",
+"photo5.jpg",
+"photo6.jpg"
 ];
 
 const photoBoxes=document.querySelectorAll(".photo");
