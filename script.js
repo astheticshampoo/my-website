@@ -345,8 +345,8 @@ for (let i = 0; i < files.length && i < photoBoxes.length; i++) {
     const musicFile = document.getElementById("musicUpload").files[0];
 
 if (musicFile) {
-    const audio = document.getElementById("bgMusic");
-    audio.src = URL.createObjectURL(musicFile);
+    music.src = URL.createObjectURL(musicFile);
+    music.load();
 }
     playMusic();
 
