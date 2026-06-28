@@ -1,1 +1,498 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top,#3b0000,#120000 40%,#050505 100%);
+
+    color:white;
+
+    overflow:hidden;
+
+    height:100vh;
+}
+/* Pages */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s;
+
+    padding:20px;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/* Heading */
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:70px;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 20px #ff4b5c,
+    0 0 40px #ff2d55;
+
+    margin-bottom:20px;
+
+}
+
+.subtitle{
+
+    color:#ffdada;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    margin-bottom:40px;
+
+}
+
+
+/* Buttons */
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    color:white;
+
+    background:linear-gradient(90deg,#ff416c,#ff4b2b);
+
+    transition:.4s;
+
+    box-shadow:
+    0 0 15px rgba(255,0,70,.6),
+    0 0 40px rgba(255,0,70,.4);
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 20px #ff0055,
+    0 0 60px #ff0055;
+
+}
+
+
+/* Cards */
+.card{
+
+    width:420px;
+
+    max-width:95%;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.card h2{
+
+    margin-bottom:25px;
+
+}
+
+
+/* Letter */
+.letter{
+
+    width:700px;
+
+    max-width:90%;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.letter h2{
+
+    font-family:'Great Vibes',cursive;
+
+    color:#ff9db0;
+
+    font-size:50px;
+
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    line-height:2;
+
+    color:#eee;
+
+    margin-bottom:35px;
+
+}
+
+
+/* Gallery */
+.galleryTitle{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:55px;
+
+    margin-bottom:35px;
+
+    color:#ffb3c1;
+
+}
+
+.gallery{
+
+    width:90%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.photo{
+
+    height:230px;
+
+    border-radius:20px;
+
+    background:#222;
+
+    border:2px solid rgba(255,255,255,.12);
+
+    transition:.4s;
+
+}
+
+.photo:hover{
+
+    transform:scale(1.05);
+
+}
+/* Mobile */
+
+@media(max-width:768px){
+
+h1{
+
+font-size:48px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+.letter{
+
+padding:25px;
+
+}
+
+}
+/* Floating Hearts Background */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+#particles::before{
+
+content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+
+position:absolute;
+
+left:-10%;
+
+top:100%;
+
+font-size:24px;
+
+letter-spacing:60px;
+
+animation:hearts 18s linear infinite;
+
+opacity:.35;
+
+}
+
+@keyframes hearts{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-140vh);
+
+}
+
+}
+/* Fairy Lights */
+
+.lights{
+
+position:absolute;
+
+top:20px;
+
+left:0;
+
+width:100%;
+
+height:40px;
+
+background:
+
+radial-gradient(circle,#fff6b8 3px,transparent 5px);
+
+background-size:40px 40px;
+
+animation:blink 1.3s infinite alternate;
+
+}
+
+@keyframes blink{
+
+from{
+
+filter:brightness(.6);
+
+}
+
+to{
+
+filter:brightness(1.5);
+
+}
+
+}
+
+
+
+/* Balloons */
+.balloons{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.balloons::before{
+
+content:"🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈 🎈";
+
+position:absolute;
+
+bottom:-100px;
+
+left:-10%;
+
+font-size:45px;
+
+letter-spacing:70px;
+
+animation:fly 16s linear infinite;
+
+}
+
+@keyframes fly{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(-130vh);
+
+}
+
+}
+/* Curtain */
+
+.curtain-page{
+
+background:#120000;
+
+overflow:hidden;
+
+}
+
+.curtain{
+
+position:absolute;
+
+top:0;
+
+width:50%;
+
+height:100%;
+
+background:linear-gradient(to right,#700,#d40000,#700);
+
+transition:2s;
+
+z-index:10;
+
+}
+
+.left{
+
+left:0;
+
+border-right:4px solid gold;
+
+}
+
+.right{
+
+right:0;
+
+border-left:4px solid gold;
+
+}
+
+.curtain.open.left{
+
+transform:translateX(-100%);
+
+}
+
+.curtain.open.right{
+
+transform:translateX(100%);
+
+}
+/* Curtain Button */
+
+#openCurtain{
+
+position:absolute;
+
+z-index:20;
+
+bottom:80px;
+
+}
+
+
+
+/* Smooth Fade */
+
+.fadeIn{
+
+animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
