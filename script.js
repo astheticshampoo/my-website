@@ -357,7 +357,12 @@ if (createBtn) {
     }
 
     setupScreen.style.display = "none";
+const files = document.getElementById("photoUpload").files;
+const photoBoxes = document.querySelectorAll(".photo img");
 
+for (let i = 0; i < files.length && i < photoBoxes.length; i++) {
+    photoBoxes[i].src = URL.createObjectURL(files[i]);
+}
     showPage(0);
     playMusic();
 
