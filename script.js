@@ -148,3 +148,98 @@ balloons.appendChild(b);
 }
 
 }
+const style=document.createElement("style");
+
+style.innerHTML=`
+@keyframes balloonMove{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-140vh) rotate(20deg);
+opacity:0;
+}
+
+}
+
+@keyframes pulseGlow{
+
+0%{
+filter:drop-shadow(0 0 0px #ff4d6d);
+}
+
+50%{
+filter:drop-shadow(0 0 20px #ff4d6d);
+}
+
+100%{
+filter:drop-shadow(0 0 0px #ff4d6d);
+}
+
+}
+`;
+
+document.head.appendChild(style);
+
+document.querySelectorAll("button").forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.animation="pulseGlow .8s infinite";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.animation="";
+
+});
+
+});
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.top="100vh";
+
+heart.style.fontSize=(18+Math.random()*20)+"px";
+
+heart.style.pointerEvents="none";
+
+heart.style.transition="transform 6s linear, opacity 6s linear";
+
+heart.style.zIndex="999";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform=`translateY(-120vh) rotate(${Math.random()*360}deg)`;
+
+heart.style.opacity="0";
+
+},50);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},6100);
+
+},500);
+
+console.log("Special Website Loaded Successfully ❤️");
