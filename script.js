@@ -317,29 +317,7 @@ window.addEventListener("load",()=>{
 console.log("Gallery Loaded Successfully ❤️");
 
 });
-const createBtn = document.getElementById("createBtn");
 
-if(createBtn){
-
-createBtn.onclick = function(){
-
-const name = document.getElementById("userName").value.trim();
-const message = document.getElementById("userMessage").value.trim();
-
-if(name !== ""){
-document.getElementById("personName").innerText = name;
-}
-
-if(message !== ""){
-document.querySelector(".letter p").innerText = message;
-}
-
-document.getElementById("setupScreen").style.display = "none";
-
-};
-
-}
-const setupScreen = document.getElementById("setupScreen");
 const createBtn = document.getElementById("createBtn");
 
 if (createBtn) {
