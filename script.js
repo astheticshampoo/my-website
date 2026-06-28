@@ -342,6 +342,12 @@ for (let i = 0; i < files.length && i < photoBoxes.length; i++) {
     photoBoxes[i].src = URL.createObjectURL(files[i]);
 }
     showPage(0);
+    const musicFile = document.getElementById("musicUpload").files[0];
+
+if (musicFile) {
+    const audio = document.getElementById("bgMusic");
+    audio.src = URL.createObjectURL(musicFile);
+}
     playMusic();
 
   });
