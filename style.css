@@ -714,7 +714,106 @@ h1{
 font-size:50px;
 
 }
+#setupScreen{
 
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background:linear-gradient(135deg,#090909,#250014,#500020);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:20px;
+
+z-index:99999;
+
+}
+
+#setupScreen h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:65px;
+
+color:white;
+
+text-shadow:0 0 20px hotpink;
+
+margin-bottom:20px;
+
+}
+
+#setupScreen input,
+#setupScreen textarea{
+
+width:420px;
+
+max-width:90%;
+
+padding:18px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+font-size:18px;
+
+background:white;
+
+color:#111;
+
+}
+
+#setupScreen textarea{
+
+height:170px;
+
+resize:none;
+
+}
+
+#createBtn{
+
+padding:18px 55px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(90deg,#ff006a,#ff4d4d);
+
+color:white;
+
+transition:.4s;
+
+}
+
+#createBtn:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 30px hotpink;
+
+}
 }
 
 @media(max-width:600px){
