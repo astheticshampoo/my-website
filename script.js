@@ -335,6 +335,9 @@ if (createBtn) {
     }
 
     setupScreen.style.display = "none";
+
+    document.getElementById("shareBtn").style.display = "inline-block";
+    
 const files = document.getElementById("photoUpload").files;
 const photoBoxes = document.querySelectorAll(".photo img");
 
