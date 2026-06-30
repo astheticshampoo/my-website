@@ -16,4 +16,5 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
+window.app = app;
 window.db = db;
