@@ -342,12 +342,11 @@ for (let i = 0; i < files.length && i < photoBoxes.length; i++) {
     photoBoxes[i].src = URL.createObjectURL(files[i]);
 }
     showPage(0);
-    const musicFile = document.getElementById("musicUpload").files[0];
+    const selectedSong = document.getElementById("musicSelect").value;
 
-if (musicFile) {
-    music.src = URL.createObjectURL(musicFile);
-    music.load();
-}
+music.src = selectedSong;
+music.load();
+    
     playMusic();
 
   });
