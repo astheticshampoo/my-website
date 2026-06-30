@@ -332,6 +332,8 @@ async function saveSurprise(name, message) {
 }
 const createBtn = document.getElementById("createBtn");
 
+const setupScreen = document.getElementById("setupScreen");
+
 if (createBtn) {
 createBtn.addEventListener("click", async function () {
     
