@@ -348,9 +348,7 @@ createBtn.addEventListener("click", async function () {
       document.querySelector(".letter p").textContent = message;
     }
 
-      const surpriseId = await saveSurprise(name, message);
-
-window.currentSurpriseId = surpriseId;
+      window.currentSurpriseId = "test";
       
     setupScreen.style.display = "none";
 
