@@ -350,3 +350,16 @@ for (let i = 0; i < files.length && i < photoBoxes.length; i++) {
 
   });
 }
+const shareBtn = document.getElementById("shareBtn");
+
+if (shareBtn) {
+
+    shareBtn.addEventListener("click", function () {
+
+        navigator.clipboard.writeText(window.location.href);
+
+        alert("✅ Link Copied!\n\nAb is link ko kisi ko bhi bhej sakte ho.");
+
+    });
+
+}
