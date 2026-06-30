@@ -358,8 +358,6 @@ if (shareBtn) {
 
         navigator.clipboard.writeText(window.location.href);
 
-        alert("✅ Link Copied!\n\nAb is link ko kisi ko bhi bhej sakte ho.");
-
     });
 
 }
