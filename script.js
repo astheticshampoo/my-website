@@ -352,7 +352,11 @@ createBtn.addEventListener("click", async function () {
       
     setupScreen.style.display = "none";
 
-    document.getElementById("shareBtn").style.display = "inline-block";
+const btn = document.getElementById("shareBtn");
+
+alert(btn);
+
+btn.style.display = "block";
     
 const files = document.getElementById("photoUpload").files;
 const photoBoxes = document.querySelectorAll(".photo img");
