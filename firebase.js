@@ -20,3 +20,5 @@ const db = getFirestore(app);
 
 window.app = app;
 window.db = db;
+window.addDoc = addDoc;
+window.collection = collection;
