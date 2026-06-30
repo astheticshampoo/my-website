@@ -333,8 +333,8 @@ async function saveSurprise(name, message) {
 const createBtn = document.getElementById("createBtn");
 
 if (createBtn) {
-  createBtn.addEventListener("click", function () {
-
+createBtn.addEventListener("click", async function () {
+    
     const name = document.getElementById("userName").value.trim();
     const message = document.getElementById("userMessage").value.trim();
 
