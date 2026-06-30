@@ -346,6 +346,10 @@ if (createBtn) {
       document.querySelector(".letter p").textContent = message;
     }
 
+      const surpriseId = await saveSurprise(name, message);
+
+window.currentSurpriseId = surpriseId;
+      
     setupScreen.style.display = "none";
 
     document.getElementById("shareBtn").style.display = "inline-block";
