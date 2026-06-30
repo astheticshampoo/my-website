@@ -317,7 +317,19 @@ window.addEventListener("load",()=>{
 console.log("Gallery Loaded Successfully ❤️");
 
 });
+async function saveSurprise(name, message) {
 
+    const docRef = await window.addDoc(
+        window.collection(window.db, "surprises"),
+        {
+            name: name,
+            message: message,
+            createdAt: Date.now()
+        }
+    );
+
+    return docRef.id;
+}
 const createBtn = document.getElementById("createBtn");
 
 if (createBtn) {
